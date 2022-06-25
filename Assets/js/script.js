@@ -1,5 +1,7 @@
 var score;
 
+const penalty = 5;
+
 var navElement = document.getElementById("nav");
 
 var timerElement = document.getElementById("timer");
@@ -21,22 +23,23 @@ function setTimer () {
             timerElement.textContent = "";
             // call function going to score page
         }
-        function answerFalse(){
-        if (help = false) {
-            return;
-        }
-        timeRemaining -= 5;
-        setTimer();
-        return;
-        }   
+
+        // if (help = false) {
+        //    setTimer();
+        // }
+        // function answerFalse(){
+        // timeRemaining -= penalty;
+        // setTimer();
+        // // return;
+        // }   
         
     }, 1000);
 }
     setTimer();
-
-    // var help = confirm("yes");
-    
-    // penalty function 
+    // penalty code
+   /* if (help === false) {
+        timeRemaining -= penalty;
+    } */
 
     // landing page function - when clicking start, calls timer function and begins the quiz
 
