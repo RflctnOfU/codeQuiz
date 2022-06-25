@@ -1,0 +1,33 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background-color: #d1d1d1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+#nav,
+#header {
+    padding: 20px
+    ;
+}
+
+#main {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#questions {
+    margin-top: 100px;
+    height: 40vh;
+    width: 40vw;
+}
