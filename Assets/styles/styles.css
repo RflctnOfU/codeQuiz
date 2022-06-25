@@ -2,9 +2,9 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-body {
+/* body {
     background-color: #d1d1d1;
-}
+} */
 
 header {
     display: flex;
@@ -14,7 +14,10 @@ header {
     margin-bottom: 10px;
 }
 
-#nav,
+#nav {
+    align-content: center;
+}
+
 #header {
     padding: 20px
     ;
