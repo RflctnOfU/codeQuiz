@@ -1,13 +1,14 @@
 {
   "folders": [
-	{
-		"path": "../../../../in-class/Week02/day05/04-Web-APIs"
-	},
-	{
-		"path": "../.."
-	}
-],
+    {
+      "path": "../../../../in-class/Week02/day05/04-Web-APIs"
+    },
+    {
+      "path": "../.."
+    }
+  ],
   "settings": {
-    "liveServer.settings.multiRootWorkspaceName": "codeQuiz"
+    "liveServer.settings.multiRootWorkspaceName": "codeQuiz",
+    "liveServer.settings.port": 5501
   }
 }
