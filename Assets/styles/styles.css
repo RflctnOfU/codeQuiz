@@ -25,19 +25,26 @@ header {
 
 #main {
     margin: 20px;
-    display: flex;
+    display: block;
     justify-content: center;
 }
 
 #quiz {
-    margin-top: 100px;
+    margin: 100px auto 10px auto;
     height: 40vh;
     width: 50vw;
     text-align: center;
+    display: block;
 }
 
 #begin {
     margin-top: 15px;
+}
+
+#answer {
+    display: block;
+    margin: 0 auto;
+    
 }
 
 #one *:hover,

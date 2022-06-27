@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": "../../../../in-class/Week02/day05/04-Web-APIs"
+	},
+	{
+		"path": "../.."
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "codeQuiz"
+  }
+}

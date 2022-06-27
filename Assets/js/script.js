@@ -43,17 +43,20 @@ const button3 = document.createElement('button', { is : 'button3'});
 const button4 = document.createElement('button', { is : 'button4'});
 
 function correctAnswer() {
+    // update div to say correct answer
     var timeInt = setInterval(function() {
-        timeRem = 2;
+        // timeRem = 2;
         timeRem--;
-        answerElement.textContent = "Correct!";
-        answerElement.setAttribute("style", "border-top: solid 1px; width: 50vw;")
+        answerElement.textContent = "Correct answer!";
+        answerElement.setAttribute("style", "border-top: solid 1px; width: 50vw; padding: 10px 0;");
+        // call function to show next quest??
         if (timeRem === 0) {
-            clearInterval(timeRem)
+            clearInterval(timeInt)
             answerElement.textContent = "";
             answerElement.removeAttribute("style");
         }
-    }, 1000)
+    }, 1000);
+    
 }
 
 // timer function
@@ -103,13 +106,14 @@ function setTimer () {
         button2.textContent = "2. Booleans";
         button3.textContent = "3. Alerts";
         button4.textContent = "4. Numbers";
-        button1.addEventListener("click", )
-        button2.addEventListener("click", )
-        button3.addEventListener("click", );
-        button4.addEventListener("click", )
+        // button1.addEventListener("click", );
+        // button2.addEventListener("click", );
+        button3.addEventListener("click", questionTwoCorrect);
+        // button4.addEventListener("click", );
         }
 
     function questionTwoCorrect() {
+        console.log("here it is")
         correctAnswer();
     }
     console.log(startPage)
