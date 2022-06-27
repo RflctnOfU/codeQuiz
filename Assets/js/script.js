@@ -1,5 +1,7 @@
 const penalty = 10;
 
+var timeRem = 2;
+
 var timeRemaining = 75;
 
 var navElement = document.getElementById("nav");
@@ -40,6 +42,20 @@ const button3 = document.createElement('button', { is : 'button3'});
 
 const button4 = document.createElement('button', { is : 'button4'});
 
+function correctAnswer() {
+    var timeInt = setInterval(function() {
+        timeRem = 2;
+        timeRem--;
+        answerElement.textContent = "Correct!";
+        answerElement.setAttribute("style", "border-top: solid 1px; width: 50vw;")
+        if (timeRem === 0) {
+            clearInterval(timeRem)
+            answerElement.textContent = "";
+            answerElement.removeAttribute("style");
+        }
+    }, 1000)
+}
+
 // timer function
 function setTimer () {
     var timerInterval = setInterval(function() {
@@ -79,20 +95,26 @@ function setTimer () {
         two.appendChild(button2);
         three.appendChild(button3);
         four.appendChild(button4);
-        button1.setAttribute("style", "background-color: rgb(100, 65, 147); color: white; border-radius: 7px; padding: 5px;");
-        button2.setAttribute("style", "background-color: rgb(100, 65, 147); color: white; border-radius: 7px; padding: 5px;");
-        button3.setAttribute("style", "background-color: rgb(100, 65, 147); color: white; border-radius: 7px; padding: 5px;");
-        button4.setAttribute("style", "background-color: rgb(100, 65, 147); color: white; border-radius: 7px; padding: 5px;");
-        one.textContent = "1. Strings";
-        two.textContent = "2. Booleans";
-        three.textContent = "3. Alerts";
-        four.textContent = "4. Numbers";
+        button1.setAttribute("style", "background-color: rgb(100, 65, 147); color: white; border-radius: 7px; padding: 5px 10px 5px 5px;");
+        button2.setAttribute("style", "background-color: rgb(100, 65, 147); color: white; border-radius: 7px; padding: 5px 10px 5px 5px;");
+        button3.setAttribute("style", "background-color: rgb(100, 65, 147); color: white; border-radius: 7px; padding: 5px 10px 5px 5px;");
+        button4.setAttribute("style", "background-color: rgb(100, 65, 147); color: white; border-radius: 7px; padding: 5px 10px 5px 5px;");
+        button1.textContent = "1. Strings";
+        button2.textContent = "2. Booleans";
+        button3.textContent = "3. Alerts";
+        button4.textContent = "4. Numbers";
+        button1.addEventListener("click", )
+        button2.addEventListener("click", )
+        button3.addEventListener("click", );
+        button4.addEventListener("click", )
+        }
 
-        
+    function questionTwoCorrect() {
+        correctAnswer();
     }
     console.log(startPage)
+    // correctAnswer();
     startPage();
-    setTimer();
     // penalty code
    /* if (help === false) {
         timeRemaining -= penalty;

@@ -40,10 +40,10 @@ header {
     margin-top: 15px;
 }
 
-#one *,
-#two *,
-#three *,
-#four *,
+#one *:hover,
+#two *:hover,
+#three *:hover,
+#four *:hover,
 #begin *:hover, 
 #nav a:hover {
     cursor: pointer;
