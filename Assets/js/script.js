@@ -53,11 +53,13 @@ function correctAnswer() {
             answerElement.removeAttribute("style");
         }
     }, 1000);
+    
 }
 
 function a() {
     correctAnswer();
     timeRem = 2;
+    console.log(timeRem)
 }
 
 function wrongAnswer() {
@@ -78,7 +80,8 @@ function wrongAnswer() {
 
 function b() {
     wrongAnswer();
-    // timeRem = 2;
+    timeRem = 2;
+    console.log(timeRem)
 }
 // timer function
 function setTimer () {
@@ -142,6 +145,11 @@ function questionOne() {
     button2.addEventListener("click", b);
     button3.addEventListener("click", a)
     button4.addEventListener("click", b);
+    // if (button3.click) {
+    //     questionTwo();
+    // } else if (button1.click() || button2.click() || button4.click()) {
+    //     questionTwo();
+    // }
     if (button3.addEventListener("click", questionTwo)) {
         correctAnswer();
         console.log("here we go")
@@ -185,7 +193,6 @@ function questionThree() {
         a();
     } else if ((button1.addEventListener("click", questionFour)) || (button2.addEventListener("click", questionFour)) || (button3.addEventListener("click", questionFour))) {
         b();
-        console.log("correct");
     }
 }
 
@@ -233,22 +240,6 @@ function enterInitials() {
     console.log("hello")
 }
     init();
-    // penalty code
-   /* if (help === false) {
-        timeRemaining -= penalty;
-    } */
-
-    // landing page function - when clicking start, calls timer function and begins the quiz
-
-    // answer notification function x 2 correct, wrong
-
-    // question 2 function
-
-    // question 3 function
-
-    // question 4 function
-
-    // question 5 function
 
     // submit initials function
 
