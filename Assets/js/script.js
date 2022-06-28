@@ -62,13 +62,13 @@ function a() {
 
 function wrongAnswer() {
     // update div to say correct answer
-    var timeInt = setInterval(function() {
+    var timeInt2 = setInterval(function() {
         timeRem--;
         answerElement.textContent = "Wrong answer! ❌";
         answerElement.setAttribute("style", "font-style: oblique; border-top: solid 1px; width: 50vw; padding: 10px 0;");
         // call function to show next quest??
         if (timeRem === 0) {
-            clearInterval(timeInt)
+            clearInterval(timeInt2)
             answerElement.textContent = "";
             answerElement.removeAttribute("style");
         }
@@ -78,7 +78,7 @@ function wrongAnswer() {
 
 function b() {
     wrongAnswer();
-    timeRem = 2;
+    // timeRem = 2;
 }
 // timer function
 function setTimer () {
@@ -93,6 +93,20 @@ function setTimer () {
  
     }, 1000);
 }
+
+function appendBtns() {
+    one.appendChild(button1);
+    two.appendChild(button2);
+    three.appendChild(button3);
+    four.appendChild(button4);
+}
+
+// function removeBtns() {
+//     one.removeChild(button1);
+//     two.removeChild(button2);
+//     three.removeChild(button3);
+//     four.removeChild(button4);
+// }
 
 function init() {
     heading.textContent = "Coding Quiz Challenge";
@@ -115,10 +129,7 @@ function questionOne() {
     quiz.setAttribute("style", "text-align: start;")
     questions.textContent = "Commonly used data types DO NOT include:";
     questions.setAttribute("style", "font-size: 1.5rem; font-weight: bold; margin-bottom: 20px; text-align: start;");
-    one.appendChild(button1);
-    two.appendChild(button2);
-    three.appendChild(button3);
-    four.appendChild(button4);
+    appendBtns();
     button1.setAttribute("style", "background-color: rgb(100, 65, 147); color: white; border-radius: 7px; padding: 5px 10px 5px 5px;");
     button2.setAttribute("style", "background-color: rgb(100, 65, 147); color: white; border-radius: 7px; padding: 5px 10px 5px 5px;");
     button3.setAttribute("style", "background-color: rgb(100, 65, 147); color: white; border-radius: 7px; padding: 5px 10px 5px 5px;");
@@ -140,6 +151,7 @@ function questionOne() {
 }
 
 function questionTwo() {
+    timeRem = 2;
     questions.textContent = "The condition in an if/else statement is enclosed within____.";
     button1.textContent = "1. Quotes";
     button2.textContent = "2. Curly brackets";
@@ -157,18 +169,20 @@ function questionTwo() {
 }
 
 function questionThree() {
+    timeRem = 2;
     questions.textContent = "Arrays in JavaScript can be used to store ____.";
     button1.textContent = "1. Numbers and Strings";
     button2.textContent = "2. Other Arrays";
     button3.textContent = "3. Booleans";
     button4.textContent = "4. All of the above";
-    button1.addEventListener("click", b);
-    button2.addEventListener("click", b);
+    // button1.addEventListener("click", b);
+    // button2.addEventListener("click", b);
+    button3.removeEventListener("click", a);
     button3.addEventListener("click", b);
+    button4.removeEventListener("click", b);
     button4.addEventListener("click", a);
     if (button4.addEventListener("click", questionFour)) {
         a();
-        console.log("correct");
     } else if ((button1.addEventListener("click", questionFour)) || (button2.addEventListener("click", questionFour)) || (button3.addEventListener("click", questionFour))) {
         b();
         console.log("correct");
@@ -176,20 +190,47 @@ function questionThree() {
 }
 
 function questionFour() {
+    timeRem = 2;
     questions.textContent = "String values must be enclosed within ____ when being assigned to variables.";
     button1.textContent = "1. Commas";
     button2.textContent = "2. Curly Brackets";
     button3.textContent = "3. Quotes";
     button4.textContent = "4. Parentheses";
-    button1.addEventListener("click", b);
-    button2.addEventListener("click", b);
+    // button1.addEventListener("click", b);
+    // button2.addEventListener("click", b);
+    button3.removeEventListener("click", b);
     button3.addEventListener("click", a);
+    button4.removeEventListener("click", a);
     button4.addEventListener("click", b);
-    if (button3.addEventListener("click", questionFour)) {
+    if (button3.addEventListener("click", questionFive)) {
         a();
-    } else if ((button1.addEventListener("click", questionFour)) || (button2.addEventListener("click", questionFour)) || (button4.addEventListener("click", questionFour))) {
+    } else if ((button1.addEventListener("click", questionFive)) || (button2.addEventListener("click", questionFive)) || (button4.addEventListener("click", questionFive))) {
         b();
     }
+}
+
+function questionFive() {
+    timeRem = 2;
+    questions.textContent = "A very useful tool used during development and debugging for printing content to the debugger is:";
+    button1.textContent = "1. JavaScript";
+    button2.textContent = "2. Terminal/Bash";
+    button3.textContent = "3. for loops";
+    button4.textContent = "4. console.log";
+    // button1.addEventListener("click", b);
+    // button2.addEventListener("click", b);
+    button3.removeEventListener("click", a);
+    button3.addEventListener("click", b);
+    button4.removeEventListener("click", b);
+    button4.addEventListener("click", a);
+    if (button4.addEventListener("click", enterInitials)) {
+        a();
+    } else if ((button1.addEventListener("click", enterInitials)) || (button2.addEventListener("click", enterInitials)) || (button3.addEventListener("click", enterInitials))) {
+        b();
+    }
+}
+
+function enterInitials() {
+    console.log("hello")
 }
     init();
     // penalty code
