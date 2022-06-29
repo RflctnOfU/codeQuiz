@@ -1,5 +1,10 @@
 const penalty = 10;
 
+var scores = {
+    initials: '',
+    score: ''
+}
+
 var timeRemaining = 75, clear;
 
 var form = document.getElementById("form")
@@ -125,10 +130,11 @@ function j() {
 //         enterInitials();
 //     }
 // }
+var timerInterval;
 
 // timer function
 function setTimer () {
-    var timerInterval = setInterval(function() {
+    timerInterval = setInterval(function() {
         timeRemaining--;
         timerElement.textContent = "Timer: " + timeRemaining;
         if (timeRemaining <= 0) {
@@ -242,8 +248,8 @@ function questionFive() {
     button4.addEventListener("click", i);
 }
 
-function enterInitials() {
-    clearInterval(clear);
+function enterInitials(e) {
+    clearInterval(timerInterval);
     removeBtns();
     var label = document.createElement('label');
     var submit = document.createElement('input');
@@ -261,8 +267,22 @@ function enterInitials() {
     console.log("hello")
     questions.textContent = "All Done!"
     intro.textContent = "Your final score is " + timeRemaining;
-    intro.setAttribute('style', 'margin-bottom: 10px;')
+    intro.setAttribute('style', 'margin-bottom: 10px;');
+    submit.addEventListener('click', function(e) {
+        localStorage.setItem("initials", input.value)
+        localStorage.setItem("score", timeRemaining);
+        e.preventDefault();
+        // highScores();
+        scores.initials = localStorage.getItem('initials');
+        scores.score = localStorage.getItem('score');
+        console.log(scores);
+    });
+    
 }
+
+function highScores() {
+    location.href = '../../high-scores.html'
+};
     init();
     // submit initials function
 
