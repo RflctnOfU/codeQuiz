@@ -81,7 +81,7 @@ function c() {
     correctAnswer();
     questionThree();
 }
-
+// had to jerryrig a bug i was unable to find...the timer penalty was being applied twice on wrong answers, and once on correct answers where it should not have been.
 function d() {
     wrongAnswer();
     questionThree();
@@ -122,14 +122,6 @@ function j() {
     enterInitials();
 }
 
-// function timerCount () {
-//     timeRemaining--;
-//     if (timeRemaining <= 0) {
-//         clearInterval(clear);
-//         timerElement.textContent = "";
-//         enterInitials();
-//     }
-// }
 var timerInterval;
 
 // timer function
