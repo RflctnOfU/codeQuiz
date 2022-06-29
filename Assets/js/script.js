@@ -80,26 +80,31 @@ function c() {
 function d() {
     wrongAnswer();
     questionThree();
+    timeRemaining += 10;
 }
 
 function e() {
     correctAnswer();
     questionFour();
+    timeRemaining += 10;
 }
 
 function f() {
     wrongAnswer();
     questionFour();
+    timeRemaining += 10;
 }
 
 function g() {
     correctAnswer();
     questionFive();
+    // timeRemaining += 10;
 }
 
 function h() {
     wrongAnswer();
     questionFive();
+    timeRemaining += 10;
 }
 
 function i() {
