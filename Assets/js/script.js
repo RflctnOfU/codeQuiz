@@ -57,7 +57,9 @@ function wrongAnswer() {
     answerElement.textContent = "Wrong answer! ❌";
     answerElement.setAttribute("style", "font-style: oblique; border-top: solid 1px; width: 50vw; padding: 10px 0;");
     const timeoutDisplay = setTimeout(answerTimeout, 3000);
-    // timeRemaining = timeRemaining - 10;
+    timeRemaining -= penalty;
+    console.log(timeRemaining);
+    console.log(penalty);
 }
 
 function a() {
