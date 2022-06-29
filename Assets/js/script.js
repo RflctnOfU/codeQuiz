@@ -256,7 +256,7 @@ function enterInitials(e) {
         scores.initials = localStorage.getItem('initials');
         scores.score = localStorage.getItem('score');
         console.log(scores);
-        location.href = '../../codeQuiz/high-scores.html'
+        location.href = '../Assets/high-scores.html'
     });
     
 }
