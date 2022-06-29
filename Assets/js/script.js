@@ -1,6 +1,6 @@
 const penalty = 10;
 
-var timeRemaining = 75;
+var timeRemaining = 75, clear;
 
 var form = document.getElementById("form")
 
@@ -110,6 +110,15 @@ function j() {
     enterInitials();
 }
 
+// function timerCount () {
+//     timeRemaining--;
+//     if (timeRemaining <= 0) {
+//         clearInterval(clear);
+//         timerElement.textContent = "";
+//         enterInitials();
+//     }
+// }
+
 // timer function
 function setTimer () {
     var timerInterval = setInterval(function() {
@@ -148,6 +157,10 @@ function init() {
 }
 // question functions
 function questionOne() {
+    // clear = setInterval(timerCount, 1000);
+    // console.log(timerCount);
+    // timerElement.textContent = "Time remaining: " + timeRemaining;
+    
     setTimer();
     heading.textContent = "";
     heading.removeAttribute("style");
@@ -223,6 +236,7 @@ function questionFive() {
 }
 
 function enterInitials() {
+    clearInterval(clear);
     removeBtns();
     var label = document.createElement('label');
     var submit = document.createElement('input');
