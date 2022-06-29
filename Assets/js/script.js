@@ -46,7 +46,7 @@ const button2 = document.createElement('button', { is : 'button2'});
 const button3 = document.createElement('button', { is : 'button3'});
 
 const button4 = document.createElement('button', { is : 'button4'});
-
+// answer correct/incorrect and splash timeout
 function answerTimeout () {
     answerElement.textContent = '';
     answerElement.removeAttribute("style")
@@ -66,7 +66,7 @@ function wrongAnswer() {
     console.log(timeRemaining);
     console.log(penalty);
 }
-
+// functions for click events
 function a() {
     correctAnswer();
     questionTwo();
@@ -145,20 +145,7 @@ function setTimer () {
     }, 1000);
 }
 
-function appendBtns() {
-    one.appendChild(button1);
-    two.appendChild(button2);
-    three.appendChild(button3);
-    four.appendChild(button4);
-}
-
-function removeBtns() {
-    one.removeChild(button1);
-    two.removeChild(button2);
-    three.removeChild(button3);
-    four.removeChild(button4);
-}
-
+// on load function
 function init() {
     heading.textContent = "Coding Quiz Challenge";
     heading.setAttribute("style", "font-size: 2rem; font-weight: bold; margin-bottom: 20px");
@@ -170,10 +157,6 @@ function init() {
 }
 // question functions
 function questionOne() {
-    // clear = setInterval(timerCount, 1000);
-    // console.log(timerCount);
-    // timerElement.textContent = "Time remaining: " + timeRemaining;
-    
     setTimer();
     heading.textContent = "";
     heading.removeAttribute("style");
@@ -184,7 +167,10 @@ function questionOne() {
     quiz.setAttribute("style", "text-align: start;")
     questions.textContent = "Commonly used data types DO NOT include:";
     questions.setAttribute("style", "font-size: 1.5rem; font-weight: bold; margin-bottom: 20px; text-align: start;");
-    appendBtns();
+    one.appendChild(button1);
+    two.appendChild(button2);
+    three.appendChild(button3);
+    four.appendChild(button4);
     button1.setAttribute("style", "background-color: rgb(100, 65, 147); color: white; border-radius: 7px; padding: 5px 10px 5px 5px;");
     button1.setAttribute("id", "one")
     button2.setAttribute("style", "background-color: rgb(100, 65, 147); color: white; border-radius: 7px; padding: 5px 10px 5px 5px;");
@@ -247,10 +233,13 @@ function questionFive() {
     button3.addEventListener("click", j);
     button4.addEventListener("click", i);
 }
-
+// enter initials for score
 function enterInitials(e) {
     clearInterval(timerInterval);
-    removeBtns();
+    one.removeChild(button1);
+    two.removeChild(button2);
+    three.removeChild(button3);
+    four.removeChild(button4);
     var label = document.createElement('label');
     var submit = document.createElement('input');
     var input = document.createElement('input');
@@ -272,18 +261,13 @@ function enterInitials(e) {
         localStorage.setItem("initials", input.value)
         localStorage.setItem("score", timeRemaining);
         e.preventDefault();
-        // highScores();
         scores.initials = localStorage.getItem('initials');
         scores.score = localStorage.getItem('score');
         console.log(scores);
+        location.href = '/high-scores.html'
     });
     
 }
 
-function highScores() {
-    location.href = '../../high-scores.html'
-};
     init();
-    // submit initials function
 
-    // highscores function
