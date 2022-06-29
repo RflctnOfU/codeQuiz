@@ -256,7 +256,7 @@ function enterInitials(e) {
         scores.initials = localStorage.getItem('initials');
         scores.score = localStorage.getItem('score');
         console.log(scores);
-        location.href = 'Assets/high-scores.html'
+        location.href = 'Assets/highscores.html'
     });
     
 }
