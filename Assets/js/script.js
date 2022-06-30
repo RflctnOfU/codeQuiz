@@ -130,9 +130,7 @@ function setTimer () {
         timeRemaining--;
         timerElement.textContent = "Timer: " + timeRemaining;
         if (timeRemaining <= 0) {
-            clearInterval(timerInterval)
-            timerElement.textContent = "";
-            enterInitials();
+           location.href = 'highscores.html'
         }
     }, 1000);
 }
@@ -262,4 +260,3 @@ function enterInitials(e) {
 }
 
     init();
-
